@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './MovieDetails.css';
 
 const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
@@ -22,20 +22,12 @@ const MovieDetails = ({ movieId, isOpen, onClose }) => {
   const [error, setError] = useState(null);
 
   /**
-   * جلب تفاصيل الفيلم من API
-   * Fetch movie details from API
-   */
-  useEffect(() => {
-    if (isOpen && movieId) {
-      fetchMovieDetails();
-    }
-  }, [isOpen, movieId]);
-
-  /**
    * دالة جلب تفاصيل الفيلم
    * Function to fetch movie details
    */
-  const fetchMovieDetails = async () => {
+  const fetchMovieDetails = useCallback(async () => {
+    if (!movieId) return;
+    
     setLoading(true);
     setError(null);
     
@@ -55,7 +47,17 @@ const MovieDetails = ({ movieId, isOpen, onClose }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [movieId]);
+
+  /**
+   * جلب تفاصيل الفيلم من API
+   * Fetch movie details from API
+   */
+  useEffect(() => {
+    if (isOpen && movieId) {
+      fetchMovieDetails();
+    }
+  }, [isOpen, movieId, fetchMovieDetails]);
 
   /**
    * دالة إغلاق النافذة

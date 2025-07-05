@@ -15,16 +15,16 @@ const Footer = () => {
             موقع شامل للبحث والتصفح والاستمتاع بالمحتوى السينمائي.
           </p>
           <div className="social-links">
-            <a href="#" className="social-link">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link">
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="#" className="social-link">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="#" className="social-link">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" className="social-link">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link">
               <i className="fab fa-youtube"></i>
             </a>
           </div>
@@ -33,36 +33,36 @@ const Footer = () => {
         <div className="footer-section">
           <h4>روابط سريعة</h4>
           <ul className="footer-links">
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#movies">الأفلام</a></li>
-            <li><a href="#series">المسلسلات</a></li>
-            <li><a href="#genres">التصنيفات</a></li>
-            <li><a href="#trending">الأكثر شعبية</a></li>
-            <li><a href="#new">الأحدث</a></li>
+            <li><a href="/">الرئيسية</a></li>
+            <li><a href="/movies">الأفلام</a></li>
+            <li><a href="/series">المسلسلات</a></li>
+            <li><a href="/genres">التصنيفات</a></li>
+            <li><a href="/trending">الأكثر شعبية</a></li>
+            <li><a href="/about">حول الموقع</a></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4>التصنيفات</h4>
           <ul className="footer-links">
-            <li><a href="#action">أكشن</a></li>
-            <li><a href="#drama">دراما</a></li>
-            <li><a href="#comedy">كوميدي</a></li>
-            <li><a href="#horror">رعب</a></li>
-            <li><a href="#romance">رومانسي</a></li>
-            <li><a href="#sci-fi">خيال علمي</a></li>
+            <li><a href="/genres">أكشن</a></li>
+            <li><a href="/genres">دراما</a></li>
+            <li><a href="/genres">كوميدي</a></li>
+            <li><a href="/genres">رعب</a></li>
+            <li><a href="/genres">رومانسي</a></li>
+            <li><a href="/genres">خيال علمي</a></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4>الدعم والمساعدة</h4>
           <ul className="footer-links">
-            <li><a href="#contact">اتصل بنا</a></li>
-            <li><a href="#about">حول الموقع</a></li>
-            <li><a href="#privacy">سياسة الخصوصية</a></li>
-            <li><a href="#terms">شروط الاستخدام</a></li>
-            <li><a href="#faq">الأسئلة الشائعة</a></li>
-            <li><a href="#support">الدعم الفني</a></li>
+            <li><a href="/about">اتصل بنا</a></li>
+            <li><a href="/about">حول الموقع</a></li>
+            <li><a href="/about">سياسة الخصوصية</a></li>
+            <li><a href="/about">شروط الاستخدام</a></li>
+            <li><a href="/about">الأسئلة الشائعة</a></li>
+            <li><a href="/about">الدعم الفني</a></li>
           </ul>
         </div>
 
@@ -84,9 +84,9 @@ const Footer = () => {
         <div className="footer-bottom-content">
           <p>&copy; 2024 MovieLand. جميع الحقوق محفوظة.</p>
           <div className="footer-bottom-links">
-            <a href="#privacy">الخصوصية</a>
-            <a href="#terms">الشروط</a>
-            <a href="#cookies">ملفات تعريف الارتباط</a>
+            <a href="/about">الخصوصية</a>
+            <a href="/about">الشروط</a>
+            <a href="/about">ملفات تعريف الارتباط</a>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import MovieCard from '../MovieCard';
 import MovieDetails from '../components/MovieDetails';
 import './Pages.css';
@@ -25,30 +25,22 @@ const Genres = () => {
   // حالة عرض نافذة التفاصيل
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
-  // قائمة التصنيفات المتاحة
-  const genres = [
+  // قائمة التصنيفات المتاحة (محفوظة في useMemo)
+  const genres = useMemo(() => [
     { name: 'Action', keywords: ['action', 'adventure', 'superhero'] },
     { name: 'Drama', keywords: ['drama', 'romance', 'family'] },
     { name: 'Comedy', keywords: ['comedy', 'funny', 'humor'] },
     { name: 'Horror', keywords: ['horror', 'thriller', 'scary'] },
     { name: 'Sci-Fi', keywords: ['sci-fi', 'science fiction', 'space'] },
     { name: 'Animation', keywords: ['animation', 'animated', 'cartoon'] }
-  ];
-
-  /**
-   * تحميل الأفلام عند تحميل الصفحة
-   * Load movies when page loads
-   */
-  useEffect(() => {
-    fetchMoviesByGenre(selectedGenre);
-  }, [selectedGenre]);
+  ], []);
 
   /**
    * دالة جلب الأفلام حسب التصنيف
    * Function to fetch movies by genre
    * @param {string} genre - التصنيف المطلوب
    */
-  const fetchMoviesByGenre = async (genre) => {
+  const fetchMoviesByGenre = useCallback(async (genre) => {
     setLoading(true);
     try {
       // البحث عن التصنيف في القائمة
@@ -79,7 +71,15 @@ const Genres = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [genres]);
+
+  /**
+   * تحميل الأفلام عند تحميل الصفحة
+   * Load movies when page loads
+   */
+  useEffect(() => {
+    fetchMoviesByGenre(selectedGenre);
+  }, [selectedGenre, fetchMoviesByGenre]);
 
   /**
    * دالة تغيير التصنيف
