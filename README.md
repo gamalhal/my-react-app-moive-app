@@ -4,6 +4,15 @@
 [![React Router](https://img.shields.io/badge/React%20Router-6.x-green.svg)](https://reactrouter.com/)
 [![OMDB API](https://img.shields.io/badge/OMDB%20API-1.0-orange.svg)](http://www.omdbapi.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-brightgreen.svg)](https://moive-app-gamal.netlify.app/)
+
+## 🌐 الموقع المباشر / Live Demo
+
+**🎬 جرب التطبيق الآن:** [https://moive-app-gamal.netlify.app/](https://moive-app-gamal.netlify.app/)
+
+**🎬 Try the app now:** [https://moive-app-gamal.netlify.app/](https://moive-app-gamal.netlify.app/)
+
+---
 
 ## 📖 الوصف / Description
 
@@ -21,13 +30,16 @@
 - **🎨 واجهة مستخدم حديثة** - Modern UI
 - **⚡ تنقل سريع** - Fast Navigation
 - **🌐 دعم اللغة العربية** - Arabic Language Support
+- **🎭 تفاصيل شاملة** - Comprehensive Movie Details
+- **🏷️ تصفية حسب النوع** - Genre Filtering
+- **🔥 محتوى شائع** - Trending Content
 
 ### 📄 الصفحات المتاحة / Available Pages
 - **🏠 الصفحة الرئيسية** - Home Page with Search
 - **🎬 الأفلام** - Movies Collection
 - **📺 المسلسلات** - TV Series
 - **🏷️ التصنيفات** - Genres Filter
-- **🔥 الأكثر شعبية** - Trending Content
+- **🔥 الترند** - Trending Content
 - **ℹ️ حول الموقع** - About Page
 
 ---
@@ -35,8 +47,8 @@
 ## 🚀 التثبيت والتشغيل / Installation & Setup
 
 ### المتطلبات / Prerequisites
-- Node.js (v14 أو أحدث / or higher)
-- npm أو yarn / or yarn
+- Node.js (v18 أو أحدث / or higher)
+- npm (v9 أو أحدث / or higher)
 
 ### خطوات التثبيت / Installation Steps
 
@@ -74,7 +86,7 @@ http://localhost:3000
 
 ### Frontend
 - **React 18.3.1** - مكتبة واجهة المستخدم
-- **React Router 6** - إدارة التنقل
+- **React Router 7.6.3** - إدارة التنقل
 - **CSS3** - التصميم والتنسيق
 - **JavaScript ES6+** - البرمجة
 
@@ -84,6 +96,7 @@ http://localhost:3000
 ### Tools
 - **Create React App** - إطار العمل
 - **npm** - إدارة الحزم
+- **Netlify** - النشر والتوزيع
 
 ---
 
@@ -95,13 +108,14 @@ src/
 │   ├── Header.jsx      # رأس الصفحة
 │   ├── Navbar.jsx      # شريط التنقل
 │   ├── Footer.jsx      # تذييل الصفحة
+│   ├── MovieDetails.jsx # تفاصيل الفيلم
 │   └── *.css           # ملفات التصميم
 ├── pages/              # صفحات التطبيق
 │   ├── Home.jsx        # الصفحة الرئيسية
 │   ├── Movies.jsx      # صفحة الأفلام
 │   ├── Series.jsx      # صفحة المسلسلات
 │   ├── Genres.jsx      # صفحة التصنيفات
-│   ├── Trending.jsx    # صفحة الأكثر شعبية
+│   ├── Trending.jsx    # صفحة الترند
 │   ├── About.jsx       # صفحة حول الموقع
 │   └── Pages.css       # تصميم الصفحات
 ├── App.js              # المكون الرئيسي
@@ -121,12 +135,14 @@ src/
 - **📱 تصميم متجاوب** - Mobile-First Design
 - **🌙 نمط داكن** - Dark Theme
 - **🎭 بطاقات تفاعلية** - Interactive Cards
+- **🪟 نوافذ منبثقة** - Modal Windows
 
 ### تجربة المستخدم / User Experience
 - **⚡ تحميل سريع** - Fast Loading
 - **🔍 بحث فوري** - Instant Search
 - **📱 تجاوب كامل** - Full Responsiveness
 - **♿ إمكانية الوصول** - Accessibility
+- **🎯 تفاصيل شاملة** - Comprehensive Details
 
 ---
 
@@ -152,6 +168,11 @@ REACT_APP_OMDB_API_URL=https://www.omdbapi.com
 2. اكتب اسم الفيلم في مربع البحث
 3. اضغط Enter أو انقر على أيقونة البحث
 4. استمتع بالنتائج!
+
+### عرض تفاصيل الفيلم / View Movie Details
+1. انقر على أي فيلم من النتائج
+2. ستظهر نافذة منبثقة مع تفاصيل شاملة
+3. استكشف المعلومات: القصة، الطاقم، التقييمات، إلخ
 
 ### التنقل بين الصفحات / Navigation
 - استخدم شريط التنقل العلوي
@@ -182,6 +203,11 @@ npm test
 npm run lint
 ```
 
+### تحديث التبعيات / Update Dependencies
+```bash
+npm run update-deps
+```
+
 ---
 
 ## 📊 الإحصائيات / Statistics
@@ -190,6 +216,7 @@ npm run lint
 - **+10,000** مسلسل / TV Series
 - **+1,000,000** مستخدم / User
 - **24/7** متاح / Available
+- **🌐 نشر على Netlify** - Deployed on Netlify
 
 ---
 
@@ -198,7 +225,7 @@ npm run lint
 نرحب بمساهماتكم! يرجى اتباع الخطوات التالية:
 
 1. Fork المشروع
-2. إنشاء فرع جديد (`git checkout -b feature/AmazingFeature`)
+2. إنشاء فرع للميزة الجديدة (`git checkout -b feature/AmazingFeature`)
 3. Commit التغييرات (`git commit -m 'Add some AmazingFeature'`)
 4. Push إلى الفرع (`git push origin feature/AmazingFeature`)
 5. فتح Pull Request
@@ -207,7 +234,7 @@ npm run lint
 
 ## 📄 الترخيص / License
 
-هذا المشروع مرخص تحت رخصة MIT - راجع ملف [LICENSE](LICENSE) للتفاصيل.
+هذا المشروع مرخص تحت رخصة MIT - انظر ملف [LICENSE](LICENSE) للتفاصيل.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -215,40 +242,43 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 التواصل / Contact
 
-- **📧 البريد الإلكتروني** - Email: info@movieland.com
-- **🌐 الموقع** - Website: [movieland.com](https://movieland.com)
-- **📱 الهاتف** - Phone: +1234567890
+- **البريد الإلكتروني / Email:** info@movieland.com
+- **الموقع الإلكتروني / Website:** [https://movieland.com](https://movieland.com)
+- **GitHub:** [https://github.com/your-username/movieland](https://github.com/your-username/movieland)
+
+---
+
+## 🚀 النشر / Deployment
+
+تم نشر هذا المشروع على **Netlify**:
+- **الرابط المباشر:** [https://moive-app-gamal.netlify.app/](https://moive-app-gamal.netlify.app/)
+- **النشر التلقائي** من GitHub
+- **SSL مجاني** و **CDN عالمي**
+
+---
+
+## 🎯 الخطط المستقبلية / Future Plans
+
+- [ ] إضافة نظام تسجيل دخول / User Authentication
+- [ ] قائمة المفضلة / Favorites List
+- [ ] تقييمات المستخدمين / User Ratings
+- [ ] توصيات ذكية / Smart Recommendations
+- [ ] وضع عدم الاتصال / Offline Mode
+- [ ] تطبيق الهاتف المحمول / Mobile App
 
 ---
 
 ## 🙏 الشكر / Acknowledgments
 
-- **OMDB API** - لتوفير بيانات الأفلام والمسلسلات
-- **React Team** - لإطار العمل الرائع
-- **Font Awesome** - للأيقونات الجميلة
-- **Google Fonts** - للخطوط المميزة
+- **OMDB API** لتوفير بيانات الأفلام
+- **React Team** لإطار العمل الرائع
+- **Netlify** لخدمة النشر المجانية
+- **جميع المساهمين** في هذا المشروع
 
 ---
 
-## 📈 خطة التطوير المستقبلية / Future Development
+**⭐ إذا أعجبك هذا المشروع، لا تنس إعطاءه نجمة على GitHub!**
 
-- [ ] إضافة نظام تسجيل الدخول
-- [ ] قائمة المفضلة
-- [ ] تقييمات المستخدمين
-- [ ] توصيات ذكية
-- [ ] تطبيق الهاتف المحمول
-- [ ] دعم لغات إضافية
-
----
-
-<div align="center">
-
-**🎬 استمتع بعالم الأفلام الرائع! / Enjoy the Wonderful World of Movies! 🎬**
-
-[![GitHub stars](https://img.shields.io/github/stars/your-username/movieland?style=social)](https://github.com/your-username/movieland)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/movieland?style=social)](https://github.com/your-username/movieland)
-[![GitHub issues](https://img.shields.io/github/issues/your-username/movieland)](https://github.com/your-username/movieland/issues)
-
-</div>
+**⭐ If you like this project, don't forget to give it a star on GitHub!**
 
 
