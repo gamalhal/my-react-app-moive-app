@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A comprehensive movie and TV series search website with modern UI and Arabic support",
   "private": true,
-  "homepage": "https://gamalhal.github.io/my-react-app-moive-app/",
+  "homepage": ".",
   "keywords": [
     "react",
     "movies",
