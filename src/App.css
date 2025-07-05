@@ -1,40 +1,60 @@
+/* ===== الأنماط الرئيسية للتطبيق - Main Application Styles ===== */
+
+/* استيراد الخطوط من Google Fonts */
+/* Import fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
+/* إعادة تعيين الأنماط الافتراضية */
+/* Reset default styles */
 * {
   margin: 0;
   border: 0;
   box-sizing: border-box;
 }
 
+/* متغيرات CSS المخصصة - نظام الألوان والخطوط */
+/* Custom CSS variables - color and font system */
 :root {
+  /* الخطوط */
+  /* Fonts */
   --font-roboto: "Roboto Slab", serif;
   --font-raleway: "Raleway", sans-serif;
-  --primary-color: #f9d3b4;
-  --secondary-color: #343739;
-  --background-color: #212426;
-  --search-bg: #1f2123;
-  --text-color: #a1a1a1;
+  
+  /* الألوان الرئيسية */
+  /* Primary colors */
+  --primary-color: #f9d3b4;      /* اللون الذهبي الرئيسي */
+  --secondary-color: #343739;    /* اللون الرمادي الداكن */
+  --background-color: #212426;   /* لون الخلفية */
+  --search-bg: #1f2123;          /* خلفية البحث */
+  --text-color: #a1a1a1;         /* لون النص الثانوي */
 }
 
+/* أنماط الجسم الرئيسية */
+/* Main body styles */
 body {
   font-family: var(--font-roboto);
   background: linear-gradient(135deg, #212426 0%, #1a1c1e 100%);
   min-height: 100vh;
 }
 
+/* الحاوية الرئيسية للتطبيق */
+/* Main application container */
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* المحتوى الرئيسي */
+/* Main content area */
 .main-content {
   flex: 1;
-  padding-top: 80px; /* Space for fixed navbar */
+  padding-top: 80px; /* مساحة للشريط الثابت */
 }
 
-/* Search Section Styles */
+/* ===== أنماط قسم البحث - Search Section Styles ===== */
+
 .search-section {
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #1a1c1e 0%, #212426 100%);
@@ -55,6 +75,8 @@ body {
   font-family: var(--font-raleway);
 }
 
+/* حاوية البحث */
+/* Search container */
 .search {
   width: 100%;
   max-width: 600px;
@@ -79,6 +101,8 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* حقل إدخال البحث */
+/* Search input field */
 .search input {
   flex: 1;
   border: none;
@@ -105,6 +129,8 @@ body {
   color: rgba(249, 211, 180, 0.5);
 }
 
+/* أيقونة البحث */
+/* Search icon */
 .search-icon {
   width: 35px;
   height: 35px;
@@ -118,11 +144,15 @@ body {
   filter: brightness(1);
 }
 
+/* ===== أنماط قسم الأفلام - Movies Section Styles ===== */
+
 .movies-section {
   padding: 4rem 2rem;
   background: var(--background-color);
 }
 
+/* رسالة عدم وجود نتائج */
+/* No results message */
 .empty {
   width: 100%;
   margin-top: 3rem;
@@ -147,7 +177,8 @@ body {
   opacity: 0.8;
 }
 
-/* Movie Card Styles */
+/* ===== أنماط بطاقة الفيلم - Movie Card Styles ===== */
+
 .movie {
   width: 310px;
   height: 460px;
@@ -169,6 +200,8 @@ body {
     0 0 0 1px rgba(249, 211, 180, 0.2);
 }
 
+/* الطبقة العلوية - سنة الإنتاج */
+/* Top layer - year */
 .movie div:nth-of-type(1) {
   position: absolute;
   padding: 16px;
@@ -181,6 +214,8 @@ body {
   z-index: 3;
 }
 
+/* الطبقة الوسطى - صورة الفيلم */
+/* Middle layer - movie poster */
 .movie div:nth-of-type(2) {
   width: 100%;
   height: 100%;
@@ -194,6 +229,8 @@ body {
   transition: all 0.3s ease;
 }
 
+/* الطبقة السفلية - معلومات الفيلم */
+/* Bottom layer - movie information */
 .movie div:nth-of-type(3) {
   z-index: 2;
   background: linear-gradient(0deg, var(--secondary-color) 0%, transparent 100%);
@@ -202,47 +239,42 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  transition: all 0.3s ease;
 }
 
 .movie div:nth-of-type(3) span {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--primary-color);
   font-family: var(--font-raleway);
   text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  color: #f0f0f0;
-  background: rgba(249, 211, 180, 0.2);
-  padding: 4px 8px;
-  border-radius: 4px;
-  display: inline-block;
+  letter-spacing: 0.5px;
 }
 
 .movie div:nth-of-type(3) h3 {
-  margin-top: 8px;
+  margin-top: 5px;
   font-family: var(--font-roboto);
-  color: var(--primary-color);
-  font-size: 1.1rem;
-  line-height: 1.3;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #f9f9f9;
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 
+/* تأثيرات التحويم */
+/* Hover effects */
 .movie:hover div:nth-of-type(2) {
   transform: scale(1.1);
-  filter: brightness(0.7);
-}
-
-.movie:hover div:nth-of-type(3) {
-  background: linear-gradient(0deg, rgba(52, 55, 57, 0.9) 0%, transparent 100%);
 }
 
 .movie:hover div:nth-of-type(1) {
   opacity: 1;
 }
 
-/* Responsive Design */
+/* ===== التصميم المتجاوب - Responsive Design ===== */
+
 @media screen and (max-width: 768px) {
   .search-section {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
   }
 
   .search-container h2 {
@@ -250,31 +282,30 @@ body {
   }
 
   .search {
-    padding: 1rem 1.5rem;
-    margin: 0 1rem;
+    padding: 1.25rem 1.5rem;
   }
 
   .search input {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .search-icon {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 
   .movies-section {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .search-section {
-    padding: 1rem 0.5rem;
+    padding: 2rem 1rem;
   }
 
   .search-container h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .search-container p {
@@ -282,6 +313,6 @@ body {
   }
 
   .movies-section {
-    padding: 1rem 0.5rem;
+    padding: 2rem 1rem;
   }
 }

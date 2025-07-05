@@ -1,9 +1,13 @@
+/* ===== أنماط الصفحات - Pages Styles ===== */
+
+/* الحاوية الرئيسية للصفحة */
 .page-container {
   min-height: 100vh;
   padding-top: 80px;
   background: linear-gradient(135deg, #1a1c1e 0%, #212426 100%);
 }
 
+/* رأس الصفحة */
 .page-header {
   text-align: center;
   padding: 3rem 2rem;
@@ -23,6 +27,7 @@
   font-family: var(--font-raleway);
 }
 
+/* شبكة الأفلام */
 .movies-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -32,6 +37,7 @@
   gap: 2rem;
 }
 
+/* حالة التحميل */
 .loading {
   display: flex;
   flex-direction: column;
@@ -67,6 +73,7 @@
   50% { opacity: 1; }
 }
 
+/* حالة الخطأ */
 .error {
   text-align: center;
   padding: 3rem 2rem;
@@ -78,8 +85,10 @@
   margin-bottom: 1rem;
 }
 
-/* Genres Page Styles */
-.genres-filter {
+/* ===== أنماط صفحة التصنيفات - Genres Page Styles ===== */
+
+/* أزرار التصنيفات */
+.genres-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -100,6 +109,23 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(249, 211, 180, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.genre-btn:hover::before {
+  left: 100%;
 }
 
 .genre-btn:hover,
@@ -110,7 +136,63 @@
   box-shadow: 0 5px 15px rgba(249, 211, 180, 0.3);
 }
 
-/* Trending Page Styles */
+/* عنوان التصنيف المحدد */
+.selected-genre {
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.selected-genre h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* ===== أنماط صفحة الترند - Trending Page Styles ===== */
+
+/* إحصائيات الترند */
+.trending-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(249, 211, 180, 0.1);
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(249, 211, 180, 0.1);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: var(--font-raleway);
+  font-weight: 500;
+}
+
+/* ===== أنماط صفحة الترند القديمة - Old Trending Page Styles ===== */
+
 .trending-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -134,7 +216,8 @@
   font-family: var(--font-raleway);
 }
 
-/* About Page Styles */
+/* ===== أنماط صفحة من نحن - About Page Styles ===== */
+
 .about-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -204,59 +287,65 @@
 
 .stat-item {
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(249, 211, 180, 0.1), rgba(255, 107, 107, 0.1));
-  border-radius: 15px;
-  border: 1px solid rgba(249, 211, 180, 0.2);
+  padding: 1.5rem;
+  background: rgba(249, 211, 180, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(249, 211, 180, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(249, 211, 180, 0.1);
 }
 
 .stat-item h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .stat-item p {
-  font-size: 1.1rem;
   color: var(--text-color);
   font-family: var(--font-raleway);
 }
 
 .contact-info {
-  margin-top: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .contact-info p {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
   color: var(--text-color);
   font-family: var(--font-raleway);
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* Responsive Design */
+/* ===== التصميم المتجاوب - Responsive Design ===== */
+
 @media screen and (max-width: 768px) {
   .page-header h1 {
     font-size: 2.5rem;
   }
 
   .page-header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .movies-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
     padding: 1rem;
   }
 
-  .genres-filter {
+  .genres-buttons {
     padding: 1rem;
   }
 
   .genre-btn {
-    padding: 0.5rem 1rem;
     font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
 
   .about-content {
@@ -265,24 +354,30 @@
 
   .about-section {
     padding: 1.5rem;
-    margin-bottom: 2rem;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
   }
 
   .stat-item {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .stat-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .trending-stats {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .stat-number {
     font-size: 2rem;
   }
 }
@@ -298,12 +393,16 @@
 
   .movies-grid {
     grid-template-columns: 1fr;
-    padding: 0.5rem;
+    gap: 1rem;
   }
 
-  .genres-filter {
+  .genres-buttons {
     flex-direction: column;
     align-items: center;
+  }
+
+  .genre-btn {
+    width: 200px;
   }
 
   .stats-grid {
@@ -316,5 +415,15 @@
 
   .feature {
     padding: 1rem;
+  }
+
+  .trending-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-item {
+    width: 100%;
+    max-width: 200px;
   }
 } 
