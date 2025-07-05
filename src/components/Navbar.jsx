@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,21 +20,27 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-content">
         <div className="navbar-logo">
-          <h2>MovieLand</h2>
+          <Link to="/">
+            <h2>MovieLand</h2>
+          </Link>
         </div>
 
         <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="navbar-links">
-            <li><a href="#home" className="navbar-link active">الرئيسية</a></li>
-            <li><a href="#movies" className="navbar-link">الأفلام</a></li>
-            <li><a href="#series" className="navbar-link">المسلسلات</a></li>
-            <li><a href="#genres" className="navbar-link">التصنيفات</a></li>
-            <li><a href="#trending" className="navbar-link">الأكثر شعبية</a></li>
-            <li><a href="#about" className="navbar-link">حول الموقع</a></li>
+            <li><Link to="/" className={`navbar-link ${isActive('/') ? 'active' : ''}`}>الرئيسية</Link></li>
+            <li><Link to="/movies" className={`navbar-link ${isActive('/movies') ? 'active' : ''}`}>الأفلام</Link></li>
+            <li><Link to="/series" className={`navbar-link ${isActive('/series') ? 'active' : ''}`}>المسلسلات</Link></li>
+            <li><Link to="/genres" className={`navbar-link ${isActive('/genres') ? 'active' : ''}`}>التصنيفات</Link></li>
+            <li><Link to="/trending" className={`navbar-link ${isActive('/trending') ? 'active' : ''}`}>الأكثر شعبية</Link></li>
+            <li><Link to="/about" className={`navbar-link ${isActive('/about') ? 'active' : ''}`}>حول الموقع</Link></li>
           </ul>
         </div>
 

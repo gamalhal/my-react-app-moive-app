@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -12,11 +13,11 @@ const Header = () => {
         
         <nav className="nav">
           <ul className="nav-list">
-            <li><a href="#home" className="nav-link active">الرئيسية</a></li>
-            <li><a href="#movies" className="nav-link">الأفلام</a></li>
-            <li><a href="#series" className="nav-link">المسلسلات</a></li>
-            <li><a href="#genres" className="nav-link">التصنيفات</a></li>
-            <li><a href="#about" className="nav-link">حول الموقع</a></li>
+            <li><Link to="/" className="nav-link active">الرئيسية</Link></li>
+            <li><Link to="/movies" className="nav-link">الأفلام</Link></li>
+            <li><Link to="/series" className="nav-link">المسلسلات</Link></li>
+            <li><Link to="/genres" className="nav-link">التصنيفات</Link></li>
+            <li><Link to="/about" className="nav-link">حول الموقع</Link></li>
           </ul>
         </nav>
 
